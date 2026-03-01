@@ -10,7 +10,7 @@ const router = express.Router();
 // GET /health - Basic health check
 router.get('/health', healthController.healthCheck);
 
-// GET /api/v1/status - API status with version info
-router.get('/api/v1/status', healthController.apiStatus);
+// GET /api/v1/health - API health status with version info
+router.get('/api/v1/health', healthController.apiHealth);
 
 module.exports = router;
