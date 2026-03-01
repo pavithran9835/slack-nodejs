@@ -16,23 +16,20 @@ const healthCheck = (req, res) => {
 };
 
 /**
- * API status endpoint handler
- * Returns API version and status information
+ * API health check endpoint handler
+ * Returns API version and running status
  */
-const apiStatus = (req, res) => {
-  const statusData = {
+const apiHealth = (req, res) => {
+  const healthData = {
     success: true,
-    data: {
-      version: config.appVersion,
-      status: 'running',
-      timestamp: new Date().toISOString(),
-    },
+    message: 'API is running',
+    version: config.appVersion,
   };
 
-  res.status(200).json(statusData);
+  res.status(200).json(healthData);
 };
 
 module.exports = {
   healthCheck,
-  apiStatus,
+  apiHealth,
 };
